@@ -36,3 +36,28 @@ $('.works-slider').slick({
     focusOnSelect: true,
     arrows: false
 });
+
+// ********* NEW
+
+let createMenu = () => {
+  console.log('object')
+
+  if ($(window).width() <= 767) {
+    if ($('.mobile-menu').length === 0) {
+      $('.header__logo').after('<div class="mobile-menu">Меню</div>');
+    }
+  } else {
+    $('.mobile-menu').remove();
+  }
+}
+
+$('body').on('click', '.mobile-menu', (e) => {
+  $(e.currentTarget).toggleClass('active');
+  $('.header__menu').slideToggle();
+});
+
+createMenu();
+
+$(window).resize(() => {
+  createMenu();
+});

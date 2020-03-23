@@ -2415,3 +2415,56 @@ a {
 		margin-top: 35px;
 	}
 }
+
+// ********** NEW
+
+.mobile-menu {
+	@include r(767) {
+		display: block;
+	}
+
+	display: none;
+	width: 100%;
+    text-align: center;
+    background: #ffddaa;
+    padding: 4px 0;
+}
+
+@media (max-width: 767px) {
+	.reputation__item p {
+		font-size: 16px;
+
+		br {
+			display: none;
+		}
+
+		strong {
+			display: block;
+		}
+	}
+
+	.reputation__item img {
+		width: 70px;
+	}
+
+	.header__menu {
+		display: none;
+		width: 100%;
+		text-align: center;
+		background: #ffefd6;
+		padding: 10px 0;
+
+		&.active {
+			display: block;
+		}
+
+		a {
+			display: block;
+			margin-bottom: 10px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
